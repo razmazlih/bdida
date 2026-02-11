@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מתמטיקה בדידה | אפקה - סיכום מלא</title>
+    <meta name="description"
+        content="סיכום מלא ומעמיק של קורס מתמטיקה בדידה 90926 באפקה להנדסת תוכנה - לוגיקה, הוכחות, קבוצות, קומבינטוריקה, גרפים ותרגול">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <div class="nav-logo"><span class="nav-logo-icon">📐</span> בדידה 90926</div>
+            <button class="nav-toggle" aria-label="תפריט">☰</button>
+            <ul class="nav-links">
+                <li><a href="#overview">סקירה</a></li>
+                <li><a href="#weights">משקלות</a></li>
+                <li><a href="#logic">לוגיקה</a></li>
+                <li><a href="#proofs">הוכחות</a></li>
+                <li><a href="#sets">קבוצות</a></li>
+                <li><a href="#combinatorics">קומבינטוריקה</a></li>
+                <li><a href="#graphs">גרפים</a></li>
+                <li><a href="#practice">תרגול</a></li>
+                <li><a href="#quiz">מוכנות</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🎓 אפקה – הנדסת תוכנה – סמסטר א׳</div>
+            <h1>מתמטיקה בדידה</h1>
+            <p class="hero-subtitle">סיכום מלא, מעמיק ומסודר של כל חומר הקורס – הגדרות, משפטים, הוכחות, דוגמאות ותרגול
+                ברמת מבחן</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">7</div>
+                    <div class="hero-stat-label">נושאים מרכזיים</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">25+</div>
+                    <div class="hero-stat-label">תרגילים עם פתרון</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">50-85</div>
+                    <div class="hero-stat-label">שעות לימוד מומלצות</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- OVERVIEW -->
+    <section class="section" id="overview">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-icon">📋</div>
+                <h2 class="section-title">סקירה כללית</h2>
+                <p class="section-desc">מתמטיקה בדידה היא קורס "כלים" שמרכז יסודות פורמליים בהנדסת תוכנה: ניסוח טענות,
+                    הוכחות, ספירות, יחסים ופונקציות, ורעיונות בגרפים</p>
+            </div>
+
+            <div class="card animate-on-scroll" style="margin-bottom:1.5rem">
+                <h3 style="margin-bottom:1rem">📚 נושאי הקורס (לפי תקציר אפקה 90926)</h3>
+                <ul>
+                    <li><strong>לוגיקה ותחשיב הפסוקים</strong> – פסוקים, קשרים, טבלאות אמת, טאוטולוגיות, שקילות וגרירה
+                    </li>
+                    <li><strong>תורת הקבוצות</strong> – פעולות, קבוצת חזקה, יחסים, פונקציות, עוצמות</li>
+                    <li><strong>אינדוקציה</strong> – רגילה וחזקה, בסיס וצעד</li>
+                    <li><strong>קומבינטוריקה</strong> – עקרון הכפל, סידורים, צירופים, בינום ניוטון, הכלה–הוצאה, שובך
+                        היונים</li>
+                    <li><strong>רקורסיה ופונקציות יוצרות</strong> – כלל נסיגה, פתרון נסיגות, פונקציות יוצרות</li>
+                    <li><strong>גרפים</strong> – מושגים בסיסיים, מסלולים, מעגלים, עצים, משפט אוילר</li>
+                </ul>
+            </div>
+
+            <div class="card animate-on-scroll" style="margin-bottom:1.5rem">
+                <h3 style="margin-bottom:1rem">🏗️ מבנה המבחן</h3>
+                <div class="exam-structure">
+                    <div class="exam-card">
+                        <div class="exam-years">2020–2023</div>
+                        <div class="exam-detail">6 שאלות × 20 נק׳ = 120 נק׳ (מנורמל)</div>
+                    </div>
+                    <div class="exam-card">
+                        <div class="exam-years">2024</div>
+                        <div class="exam-detail">5 שאלות × 25 נק׳ = 125 נק׳ (מנורמל)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box animate-on-scroll">
+                <h4>⚠️ נושאים שאינם בסילבוס 90926</h4>
+                <p>הסתברות בדידה (קורס נפרד 90911), סיבוכיות ו-O-notation, אלגוריתמי חיפוש/מיון, אוטומטים ומכונות
+                    טיורינג – <strong>לא נכללים</strong> בקורס זה.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- WEIGHTS -->
+    <section class="section" id="weights">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-icon">⚖️</div>
+                <h2 class="section-title">משקל יחסי במבחן</h2>
+                <p class="section-desc">מבוסס ניתוח מבחנים משנים 2020–2024</p>
+            </div>
+            <div class="weight-grid animate-on-scroll">
+                <div class="weight-item">
+                    <div class="weight-percentage" style="color:#8b5cf6">≈34%</div>
+                    <div class="weight-bar-container">
+                        <div class="weight-label">הוכחות ואינדוקציה</div>
+                        <div class="weight-bar">
+                            <div class="weight-bar-fill" data-width="34" style="background:var(--gradient-primary)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weight-item">
+                    <div class="weight-percentage" style="color:#3b82f6">≈30%</div>
+                    <div class="weight-bar-container">
+                        <div class="weight-label">קבוצות / פונקציות / יחסים</div>
+                        <div class="weight-bar">
+                            <div class="weight-bar-fill" data-width="30"
+                                style="background:linear-gradient(135deg,#3b82f6,#06b6d4)"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weight-item">
+                    <div class="weight-percentage" style="color:#10b981">≈16%</div>
+                    <div class="weight-bar-container">
+                        <div class="weight-label">קומבינטוריקה ורקורסיה</div>
+                        <div class="weight-bar">
+                            <div class="weight-bar-fill" data-width="16" style="background:var(--gradient-secondary)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weight-item">
+                    <div class="weight-percentage" style="color:#f59e0b">≈7%</div>
+                    <div class="weight-bar-container">
+                        <div class="weight-label">לוגיקה פסוקית</div>
+                        <div class="weight-bar">
+                            <div class="weight-bar-fill" data-width="7"
+                                style="background:linear-gradient(135deg,#f59e0b,#ec4899)"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weight-item">
+                    <div class="weight-percentage" style="color:#06b6d4">≈5%</div>
+                    <div class="weight-bar-container">
+                        <div class="weight-label">גרפים ועצים</div>
+                        <div class="weight-bar">
+                            <div class="weight-bar-fill" data-width="5"
+                                style="background:linear-gradient(135deg,#06b6d4,#8b5cf6)"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weight-item">
+                    <div class="weight-percentage" style="color:#ec4899">≈8%</div>
+                    <div class="weight-bar-container">
+                        <div class="weight-label">שונות / מעורב</div>
+                        <div class="weight-bar">
+                            <div class="weight-bar-fill" data-width="8"
+                                style="background:linear-gradient(135deg,#ec4899,#ef4444)"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- STUDY TIME -->
+    <section class="section" id="study-time">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-icon">⏱️</div>
+                <h2 class="section-title">הערכת זמן לימוד</h2>
+                <p class="section-desc">הערכה ריאלית לסטודנט/ית שרוצה רמה "קצת מעל המבחן"</p>
+            </div>
+            <div class="time-grid animate-on-scroll">
+                <div class="time-item"><span class="time-icon">🔤</span>
+                    <div class="time-details">
+                        <div class="time-topic">לוגיקה פסוקית וטבלאות אמת</div>
+                        <div class="time-hours">לימוד + תרגול</div>
+                    </div>
+                    <div class="time-value">7–11 שעות</div>
+                </div>
+                <div class="time-item"><span class="time-icon">📝</span>
+                    <div class="time-details">
+                        <div class="time-topic">הוכחות + אינדוקציה</div>
+                        <div class="time-hours">לימוד + תרגול</div>
+                    </div>
+                    <div class="time-value">16–24 שעות</div>
+                </div>
+                <div class="time-item"><span class="time-icon">🗂️</span>
+                    <div class="time-details">
+                        <div class="time-topic">קבוצות / פונקציות / יחסים</div>
+                        <div class="time-hours">לימוד + תרגול</div>
+                    </div>
+                    <div class="time-value">16–24 שעות</div>
+                </div>
+                <div class="time-item"><span class="time-icon">🔢</span>
+                    <div class="time-details">
+                        <div class="time-topic">קומבינטוריקה + הכלה–הוצאה + שובך</div>
+                        <div class="time-hours">לימוד + תרגול</div>
+                    </div>
+                    <div class="time-value">20–28 שעות</div>
+                </div>
+                <div class="time-item"><span class="time-icon">🔁</span>
+                    <div class="time-details">
+                        <div class="time-topic">רקורסיה + פונקציות יוצרות</div>
+                        <div class="time-hours">לימוד + תרגול</div>
+                    </div>
+                    <div class="time-value">12–20 שעות</div>
+                </div>
+                <div class="time-item"><span class="time-icon">🌐</span>
+                    <div class="time-details">
+                        <div class="time-topic">גרפים + עצים + אוילר</div>
+                        <div class="time-hours">לימוד + תרגול</div>
+                    </div>
+                    <div class="time-value">12–20 שעות</div>
+                </div>
+            </div>
+            <div class="tip-box animate-on-scroll" style="margin-top:1.5rem;text-align:center">
+                <h4>💡 סה״כ: סדר גודל 50–85 שעות לשדרוג משמעותי (תלוי ברקע)</h4>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- LOGIC -->
+    <section class="section" id="logic">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-icon">🔤</div>
+                <h2 class="section-title">לוגיקה פסוקית</h2>
+                <p class="section-desc">טבלאות אמת, טאוטולוגיות, שקילות וגרירה לוגית</p>
+            </div>
+            <div class="topic-content">
+
+                <div class="definition-box animate-on-scroll">
+                    <h4>📘 הגדרה פורמלית – שפה פסוקית</h4>
+                    <p>קבוצת משתנים פסוקיים $P=\{p,q,r,\dots\}$. נוסחאות (wffs) נבנות רקורסיבית:</p>
+                    <ul>
+                        <li>כל $p\in P$ היא נוסחה</li>
+                        <li>אם $\varphi,\psi$ נוסחאות אז גם $\neg\varphi$, $(\varphi\land\psi)$, $(\varphi\lor\psi)$,
+                            $(\varphi\to\psi)$, $(\varphi\leftrightarrow\psi)$ נוסחאות</li>
+                    </ul>
+                    <p>הערכה $v:P\to\{T,F\}$ מורחבת לנוסחאות לפי טבלת האמת של הקשרים.</p>
+                </div>
+
+                <div class="card animate-on-scroll">
+                    <h4 style="margin-bottom:1rem">🔑 מושגי מפתח</h4>
+                    <ul>
+                        <li><strong>טאוטולוגיה:</strong> $\varphi$ אמת לכל הערכה</li>
+                        <li><strong>סתירה:</strong> $\varphi$ שקר לכל הערכה</li>
+                        <li><strong>סיפוק:</strong> קיימת הערכה שמספקת $\varphi$</li>
+                        <li><strong>שקילות לוגית:</strong> $\varphi\equiv\psi$ אם $\varphi\leftrightarrow\psi$
+                            טאוטולוגיה</li>
+                        <li><strong>גרירה לוגית:</strong> $\Gamma\models\varphi$ אם בכל הערכה שמספקת את $\Gamma$, גם
+                            $\varphi$ אמת</li>
+                    </ul>
+                </div>
+
+                <div class="theorem-box animate-on-scroll">
+                    <h4>📐 שקילויות שחייבים לדעת "ביד"</h4>
+                    <ul>
+                        <li>$\varphi\to\psi \equiv \neg\varphi\lor\psi$</li>
+                        <li><strong>דה-מורגן:</strong> $\neg(\varphi\land\psi)\equiv \neg\varphi\lor\neg\psi$
+                            &#x200E;,&#x200E; $\neg(\varphi\lor\psi)\equiv \neg\varphi\land\neg\psi$</li>
+                        <li><strong>שלילת כפליים:</strong> $\neg\neg\varphi\equiv\varphi$</li>
+                    </ul>
+                    <p style="margin-top:1rem"><strong>הוכחה קצרה ($\varphi\to\psi \equiv
+                            \neg\varphi\lor\psi$):</strong> בודקים 4 השמות. רק ב-$(T,F)$ שניהם שקריים; בשאר – שניהם אמת
+                        → שקילות.</p>
+                </div>
+
+                <div class="example-box animate-on-scroll">
+                    <h4>💻 דוגמה ממוחשבת – יצירת טבלת אמת</h4>
+                    <pre><code>import itertools
+
+def implies(a, b):
+    return (not a) or b
+
+def truth_table():
+    for p, q, r in itertools.product([False, True], repeat=3):
+        val = implies((p and q), r)
+        print(p, q, r, "|", val)
+
+truth_table()</code></pre>
+                </div>
+
+                <div class="tip-box animate-on-scroll">
+                    <h4>💡 טיפים למבחן</h4>
+                    <ul>
+                        <li>כשמבקשים "האם מסקנה נובעת מהנחות" – הכי מהיר: לחפש <strong>השמה נגדית</strong>
+                            (counterexample)</li>
+                        <li>בשלילה של פסוק מורכב: אל תנחש; הפוך שיטתית ע״י דה-מורגן</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box animate-on-scroll">
+                    <h4>⚠️ שגיאות נפוצות</h4>
+                    <ul>
+                        <li>להחליף בין $\to$ ובין $\leftrightarrow$</li>
+                        <li>לשכוח ש-$\to$ שקרי <em>רק</em> כשקודם אמת ונמשך שקר</li>
+                    </ul>
+                </div>
+
+                <!-- Quantifiers subsection -->
+                <div class="card animate-on-scroll" style="border-right:4px solid var(--accent-amber)">
+                    <h3 style="margin-bottom:1rem;color:var(--accent-amber)">🔍 קוונטורים / פרדיקטים</h3>
+                    <p style="color:var(--accent-amber);font-size:0.85rem;margin-bottom:1rem"><em>סטטוס: לא צויין
+                            מפורשות בתקציר 90926, אך הופיע בחומרי מבחן</em></p>
+                    <ul>
+                        <li>תחום דיון $D$, פרדיקט $P(\cdot): D\to\{T,F\}$</li>
+                        <li>$\forall x\,\varphi(x)$: אמת אם לכל $x\in D$, $\varphi(x)$ אמת</li>
+                        <li>$\exists x\,\varphi(x)$: אמת אם קיים $x\in D$ כך ש-$\varphi(x)$ אמת</li>
+                    </ul>
+                    <div class="theorem-box" style="margin-top:1rem">
+                        <h4>שלילות קוונטורים</h4>
+                        <ul>
+                            <li>$\neg\forall x\,\varphi \equiv \exists x\,\neg\varphi$</li>
+                            <li>$\neg\exists x\,\varphi \equiv \forall x\,\neg\varphi$</li>
+                        </ul>
+                    </div>
+                    <div class="example-box" style="margin-top:1rem">
+                        <h4>💻 דוגמה ממוחשבת</h4>
+                        <pre><code>D = range(1, 11)
+def divides(x, y): return y % x == 0
+
+# ∀x ∃y (x divides y) בתחום 1..10
+print(all(any(divides(x, y) for y in D) for x in D))</code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- PROOFS -->
+    <section class="section" id="proofs">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-icon">📝</div>
+                <h2 class="section-title">הוכחות ואינדוקציה</h2>
+                <p class="section-desc">שיטות הוכחה מרכזיות – ישירה, בשלילה, בסתירה ואינדוקציה</p>
+            </div>
+            <div class="topic-content">
+
+                <div class="table-wrapper animate-on-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>שיטה</th>
+                                <th>מתי לבחור</th>
+                                <th>שלד פתרון</th>
+                                <th>מלכודת נפוצה</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>ישירה</strong></td>
+                                <td>כשיש הגדרות שעובדות "קדימה"</td>
+                                <td>נניח $A$. נרצה $B$. נפתח הגדרות → נסיק $B$</td>
+                                <td>קפיצות לוגיות בלי הצדקה</td>
+                            </tr>
+                            <tr>
+                                <td><strong>בדרך השלילה</strong></td>
+                                <td>כש-$A\to B$ קשה אבל $\neg B\to \neg A$ קל</td>
+                                <td>נוכיח $\neg B\to\neg A$</td>
+                                <td>להתבלבל בין שלילה ל"הפוך"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>בסתירה</strong></td>
+                                <td>כשאין בנייה ישירה טובה</td>
+                                <td>נניח ההפך. נוביל לסתירה</td>
+                                <td>לא להגדיר "מה סותר מה"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>אינדוקציה</strong></td>
+                                <td>כשיש $n\in\mathbb{N}$ ומופיע "לכל $n$"</td>
+                                <td>בסיס → הנחה → צעד</td>
+                                <td>שימוש בהנחה על $n+1$</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="theorem-box animate-on-scroll">
+                    <h4>📐 הוכחה לדוגמה – פרטיציה במחלקות שקילות</h4>
+                    <p>אם $R$ יחס שקילות על $A$ אז קבוצות $[a]=\{x\in A: xRa\}$ יוצרות חלוקה של $A$.</p>
+                    <p><strong>סקיצה:</strong></p>
+                    <ol>
+                        <li>כל $a\in A$ שייך ל-$[a]$ (רפלקסיביות)</li>
+                        <li>אם $[a]\cap[b]\neq\emptyset$, קח $x$ בחיתוך. אז $xRa$ ו-$xRb$. מסימטריות $aRx$. מטרנזיטיביות
+                            $aRb$. מכאן $[a]=[b]$</li>
+                        <li>לכן המחלקות זרות או זהות ← חלוקה</li>
+                    </ol>
+                </div>
+
+                <div class="tip-box animate-on-scroll">
+                    <h4>💡 טיפים למבחן</h4>
+                    <ul>
+                        <li>באינדוקציה: כתוב "בסיס" ו"צעד" בכותרות פנימיות – מצמצם טעויות</li>
+                        <li>הנחת אינדוקציה הנכונה: "נניח עבור $k$ טבעי מסוים" (לא "עבור $k+1$")</li>
+                        <li>שני סוגי קושי חוזרים במבחנים: <strong>קושי פורמלי</strong> (ניסוח מדויק) ו<strong>קושי
+                                מודלינג</strong> (תרגום סיפור לפתרון מתמטי)</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- SETS, FUNCTIONS, RELATIONS -->
+    <section class="section" id="sets">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-icon">🗂️</div>
+                <h2 class="section-title">קבוצות, פונקציות ויחסים</h2>
+                <p class="section-desc">ה"בשר" של הקורס – קבוצות, פעולות, יחסי שקילות וסדר חלקי</p>
+            </div>
+            <div class="topic-content">
+
+                <div class="definition-box animate-on-scroll">
+                    <h4>📘 קבוצות</h4>
+                    <p>קבוצה היא אוסף איברים. פעולות: $A\cup B$, $A\cap B$, $A\setminus B$, משלים $A^c$.</p>
+                    <p><strong>קבוצת החזקה:</strong> $P(A)=\{S: S\subseteq A\}$. אם $|A|=n$ אז $|P(A)|=2^n$.</p>
+                </div>
+
+                <div class="definition-box animate-on-scroll">
+                    <h4>📘 פונקציות</h4>
+                    <p>$f:A\to B$ – יחס שמקצה לכל $a\in A$ איבר יחיד $f(a)\in B$.</p>
+                    <ul>
+                        <li><strong>חד-חד-ערכית (חח״ע):</strong> $f(a_1)=f(a_2)\Rightarrow a_1=a_2$</li>
+                        <li><strong>על:</strong> לכל $b\in B$ קיים $a\in A$ כך ש-$f(a)=b$</li>
+                        <li><strong>הפיכה:</strong> קיימת $g:B\to A$ כך ש-$g\circ f=\text{id}_A$ ו-$f\circ
+                            g=\text{id}_B$</li>
+                    </ul>
+                    <p style="margin-top:0.5rem">מספר פונקציות מ-$A$ ל-$B$: $|B|^{|A|}$. (אם $|A|=n, |B|=m$ → סה״כ
+                        $m^n$)</p>
+                </div>
+
+                <div class="definition-box animate-on-scroll">
+                    <h4>📘 יחסים – תכונות</h4>
+                    <p>יחס $R\subseteq A\times A$:</p>
+                    <ul>
+                        <li><strong>רפלקסיבי:</strong> $\forall a,\; aRa$</li>
+                        <li><strong>סימטרי:</strong> $aRb\Rightarrow bRa$</li>
+                        <li><strong>טרנזיטיבי:</strong> $aRb\land bRc\Rightarrow aRc$</li>
+                    </ul>
+                </div>
+
+                <div class="table-wrapper animate-on-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>תכונה</th>
+                                <th>להוכיח</th>
+                                <th>להפריך</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>רפלקסיבי</strong></td>
+                                <td>קח $a$ שרירותי, הראה $aRa$</td>
+                                <td>מצא $a$ כך ש-$\neg(aRa)$</td>
+                            </tr>
+                            <tr>
+                                <td><strong>סימטרי</strong></td>
+                                <td>הנח $aRb$, הראה $bRa$</td>
+                                <td>מצא $a,b$ עם $aRb$ ו-$\neg(bRa)$</td>
+                            </tr>
+                            <tr>
+                                <td><strong>טרנזיטיבי</strong></td>
+                                <td>הנח $aRb, bRc$, הראה $aRc$</td>
+                                <td>מצא $a,b,c$ מתאימים</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card animate-on-scroll">
+                    <h4 style="margin-bottom:1rem">🔗 יחס שקילות מול סדר חלקי</h4>
+                    <ul>
+                        <li><strong>יחס שקילות:</strong> רפלקסיבי + סימטרי + טרנזיטיבי → מחלקות שקילות ופרטיציה</li>
+                        <li><strong>סדר חלקי:</strong> רפלקסיבי + <strong>אנטי-סימטרי</strong> ($aRb\land bRa\Rightarrow
+                            a=b$) + טרנזיטיבי</li>
+                        <li><strong>דיאגרמת האסה:</strong> מציירים רק יחסי "כיסוי" (cover) בלי חצים טרנזיטיביים</li>
+                    </ul>
+                </div>
+
+                <div class="card animate-on-scroll">
+                    <h4 style="margin-bottom:0.5rem">📊 מינימלי vs מינימום בסדר חלקי</h4>
+                    <ul>
+                        <li><strong>מינימלי:</strong> אין קטן ממנו (אין $x\neq a$ עם $xRa$)</li>
+                        <li><strong>מינימום:</strong> קטן מכולם (קיים $m$ כך שלכל $x$, $mRx$)</li>
+                    </ul>
+                    <p style="color:var(--accent-amber)">⚠️ אלה <strong>לא אותו דבר!</strong></p>
+                </div>
+
+                <div class="example-box animate-on-scroll">
+                    <h4>💻 דוגמה ממוחשבת – בדיקת תכונות יחס</h4>
+                    <pre><code>A = {1, 2, 3, 4, 6, 12}
+R = {(x,y) for x in A for y in A if y % x == 0}  # "x מחלק את y"
+
+def is_reflexive(A, R): return all((a,a) in R for a in A)
+def is_antisymmetric(A, R):
+    return all(((a,b) not in R or (b,a) not in R or a==b) for a in A for b in A)
+def is_transitive(A, R):
+    return all((a,c) in R for a,b in R for bb,c in R if b==bb)
+
+print(is_reflexive(A, R), is_antisymmetric(A, R), is_transitive(A, R))</code></pre>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- COMBINATORICS -->
+    <section class="section" id="combinatorics">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-icon">🔢</div>
+                <h2 class="section-title">קומבינטוריקה</h2>
+                <p class="section-desc">עקרון הכפל, סידורים, צירופים, בינום ניוטון, הכלה–הוצאה, שובך היונים, רקורסיה
+                    ופונקציות יוצרות</p>
+            </div>
+            <div class="topic-content">
+
+                <div class="definition-box animate-on-scroll">
+                    <h4>📘 עקרונות בסיסיים</h4>
+                    <ul>
+                        <li><strong>עקרון הכפל:</strong> $a$ דרכים לשלב ראשון × $b$ לשני = $ab$ סה״כ</li>
+                        <li><strong>תמורות:</strong> $n!$</li>
+                        <li><strong>צירופים (בחירת $k$ בלי סדר):</strong> $\binom{n}{k}$</li>
+                        <li><strong>סידורים (עם סדר):</strong> $P(n,k)=\frac{n!}{(n-k)!}$</li>
+                    </ul>
+                </div>
+
+                <div class="theorem-box animate-on-scroll">
+                    <h4>📐 בינום ניוטון</h4>
+                    <p>$$(x+y)^n=\sum_{k=0}^n \binom{n}{k}x^{n-k}y^k$$</p>
+                    <p><strong>הוכחה קומבינטורית:</strong> בפתיחת $(x+y)^n$ בוחרים בכל אחד מ-$n$ סוגריים האם לקחת $x$ או
+                        $y$. כדי לקבל $x^{n-k}y^k$ צריך לבחור $k$ פעמים $y$: מספר הבחירות $\binom{n}{k}$.</p>
+                </div>
+
+                <div class="theorem-box animate-on-scroll">
+                    <h4>📐 הכלה–הוצאה (Inclusion-Exclusion)</h4>
+                    <p>לשתי קבוצות: $|A\cup B|=|A|+|B|-|A\cap B|$</p>
+                    <p>ל-$n$ קבוצות: סכום מתחלף על חיתוכים.</p>
+                </div>
+
+                <div class="theorem-box animate-on-scroll">
+                    <h4>📐 שובך היונים (Pigeonhole Principle)</h4>
+                    <p>אם $N$ אובייקטים נכנסים ל-$k$ שובכים ו-$N>k$, אז יש שובך עם <strong>לפחות 2</strong>.</p>
+                </div>
+
+                <div class="definition-box animate-on-scroll">
+                    <h4>📘 רקורסיות ופונקציות יוצרות</h4>
+                    <ul>
+                        <li><strong>כלל נסיגה:</strong> $a_n=\alpha a_{n-1}+\beta a_{n-2}+\dots$ עם תנאי התחלה</li>
+                        <li><strong>פונקציה יוצרת:</strong> $A(x)=\sum_{n\ge0} a_n x^n$ — ממירה נסיגה למשוואה אלגברית
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="example-box animate-on-scroll">
+                    <h4>💻 דוגמה – מציאת מקדם בבינום</h4>
+                    <pre><code>import sympy as sp
+x = sp.Symbol('x')
+expr = (3 - x**2)**7 * (2 - 2*x)**2
+sp.expand(expr).coeff(x, 9)</code></pre>
+                </div>
+
+                <div class="tip-box animate-on-scroll">
+                    <h4>💡 טיפים למבחן</h4>
+                    <ul>
+                        <li>כשמבקשים "מקדם של $x^k$" – תחשוב מוקדם: איזה בחירות של חזקות אפשריות ומה סכומן</li>
+                        <li>בהכלה–הוצאה: כתוב את $A_i$ במילים לפני נוסחה. רוב הטעויות = הגדרת קבוצה לא נכונה</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- GRAPHS -->
+    <section class="section" id="graphs">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-icon">🌐</div>
+                <h2 class="section-title">גרפים ועצים</h2>
+                <p class="section-desc">מושגים בסיסיים, משפט לחיצת הידיים, עצים, ומשפט אוילר</p>
+            </div>
+            <div class="topic-content">
+
+                <div class="definition-box animate-on-scroll">
+                    <h4>📘 הגדרות בסיסיות</h4>
+                    <ul>
+                        <li>גרף לא מכוון $G=(V,E)$, כאשר $E\subseteq \{\{u,v\}: u,v\in V, u\neq v\}$</li>
+                        <li><strong>דרגת קודקוד:</strong> $\deg(v)$ = מספר הקשתות הנוגעות ב-$v$</li>
+                        <li><strong>משפט לחיצת הידיים:</strong> $\sum_{v\in V}\deg(v)=2|E|$</li>
+                        <li><strong>גרף $k$-רגולרי:</strong> לכל $v$, $\deg(v)=k$</li>
+                    </ul>
+                </div>
+
+                <div class="theorem-box animate-on-scroll">
+                    <h4>📐 עצים</h4>
+                    <p>עץ הוא גרף <strong>קשיר חסר מעגלים</strong>. שקילויות שימושיות:</p>
+                    <ul>
+                        <li>$T$ עץ ⇔ קשיר ו-$|E|=|V|-1$</li>
+                        <li>⇔ חסר מעגלים ו-$|E|=|V|-1$</li>
+                    </ul>
+                </div>
+
+                <div class="theorem-box animate-on-scroll">
+                    <h4>📐 משפט אוילר</h4>
+                    <p>בגרף לא מכוון <strong>קשיר</strong>:</p>
+                    <ul>
+                        <li>יש <strong>מעגל אוילרי</strong> ⇔ כל הדרגות זוגיות</li>
+                        <li>יש <strong>מסלול אוילרי</strong> (פתוח) ⇔ בדיוק 0 או 2 קודקודים אי-זוגיים</li>
+                    </ul>
+                </div>
+
+                <div class="example-box animate-on-scroll">
+                    <h4>💻 דוגמה – בדיקת תנאי אוילר</h4>
+                    <pre><code>from collections import Counter
+
+V = {1, 2, 3, 4}
+E = [(1,2), (2,3), (3,1), (3,4), (4,1)]
+deg = Counter()
+for u, v in E:
+    deg[u] += 1; deg[v] += 1
+
+odd = [v for v in V if deg[v] % 2 == 1]
+print("odd vertices:", odd)</code></pre>
+                </div>
+
+                <div class="tip-box animate-on-scroll">
+                    <h4>💡 טיפים למבחן</h4>
+                    <ul>
+                        <li>"האם קיים גרף $k$-רגולרי מסדר $n$?" – בדיקה ראשונה: $kn$ חייב להיות זוגי</li>
+                        <li>בעצי ספירה: $\sum\deg = 2(|V|-1)$</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- PRACTICE -->
+    <section class="section" id="practice">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-icon">✏️</div>
+                <h2 class="section-title">תרגול מתקדם עם פתרונות</h2>
+                <p class="section-desc">שאלות בסגנון אפקה עם פתרונות מלאים – לחצו על "הצג פתרון" לאחר ניסיון עצמאי</p>
+            </div>
+
+            <!-- LOGIC EXERCISES -->
+            <h3 class="animate-on-scroll" style="margin-bottom:1.5rem;color:var(--accent-blue)">🔤 לוגיקה פסוקית</h3>
+            <div class="exercise-set animate-on-scroll">
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">1</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">בדיקת גרירה לוגית</div>
+                                <div class="exercise-tags"><span class="tag tag-medium">בינוני</span><span
+                                        class="tag tag-time">10 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">בדקו האם $((p\to q)\land (q\to r)) \models (p\to r)$.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>נשתמש בשקילות: $p\to r \equiv \neg p\lor r$. אם $p$ אמת אז כדי שהמסקנה תיכשל צריך $r$
+                                שקר.</p>
+                            <p>אם $p=T$ ו-$r=F$: כדי ש-$q\to r$ יהיה אמת חייב $q=F$. אבל אז $p\to q$ עם $p=T,q=F$ שקר.
+                            </p>
+                            <p><strong>לכן אי אפשר לספק את ההנחות ולהפריך את המסקנה → הגרירה תקפה.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">2</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">דחיפת שלילה פנימה</div>
+                                <div class="exercise-tags"><span class="tag tag-medium">בינוני</span><span
+                                        class="tag tag-time">12 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">הפכו את $\neg(p\to(q\land r))$ לצורה ללא $\to$ וללא $\neg$ מעל
+                        סוגריים.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>1) $p\to(q\land r)\equiv \neg p\lor(q\land r)$</p>
+                            <p>2) $\neg(\neg p\lor(q\land r))\equiv p\land\neg(q\land r)$ (דה-מורגן)</p>
+                            <p>3) $\neg(q\land r)\equiv \neg q\lor\neg r$</p>
+                            <p><strong>סה״כ: $p\land(\neg q\lor \neg r)$</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">3</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">הוכחה מהנחות</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">קשה</span><span
+                                        class="tag tag-time">15 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">נתון: $(p\lor q)\to r$ ו-$\neg r$. הוכיחו ש-$\neg p\land \neg q$.
+                    </div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>מ-$(p\lor q)\to r$ נקבל $\neg(p\lor q)\lor r$.</p>
+                            <p>יחד עם $\neg r$ נובע $\neg(p\lor q)$ (אחרת היינו מקבלים $r$).</p>
+                            <p><strong>$\neg(p\lor q)\equiv \neg p\land \neg q$ (דה-מורגן).</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">4</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">מציאת השמה מספקת</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">קשה</span><span
+                                        class="tag tag-time">18 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">מצאו השמה שמספקת את $(p\leftrightarrow q)\land(p\lor r)\land\neg q$.
+                    </div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>מ-$\neg q$ ו-$p\leftrightarrow q$ נקבל $p=F$.</p>
+                            <p>אז $p\lor r$ מחייב $r=T$.</p>
+                            <p><strong>השמה: $p=F, q=F, r=T$.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">5</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">שקילות לוגית – הוכחת אי-קיום</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">מאד קשה</span><span
+                                        class="tag tag-time">18 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">הראו שאין פסוק $\varphi(p,q)$ כך ש-$\varphi\equiv p$ וגם
+                        $\varphi\equiv q$, אלא אם $p\equiv q$.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>אם $\varphi\equiv p$ וגם $\varphi\equiv q$ אז $p\equiv q$ (טרנזיטיביות של שקילות לוגית).
+                            </p>
+                            <p><strong>לכן אם $p\not\equiv q$ אין פסוק כזה.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROOFS EXERCISES -->
+            <h3 class="animate-on-scroll" style="margin:3rem 0 1.5rem;color:var(--accent-purple)">📝 הוכחות ואינדוקציה
+            </h3>
+            <div class="exercise-set animate-on-scroll">
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">1</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">אינדוקציה – סכום אי-זוגיים</div>
+                                <div class="exercise-tags"><span class="tag tag-medium">בינוני</span><span
+                                        class="tag tag-time">12 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">הוכיחו באינדוקציה: $\sum_{k=1}^n (2k-1)=n^2$.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p><strong>בסיס</strong> $n=1$: $1=1^2$ ✓</p>
+                            <p><strong>צעד:</strong> נניח $\sum_{k=1}^n (2k-1)=n^2$. אז:</p>
+                            <p>$\sum_{k=1}^{n+1}(2k-1)=n^2+(2(n+1)-1)=n^2+2n+1=(n+1)^2$ ✓</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">2</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">הוכחה בשלילה – שוויון קבוצות</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">קשה</span><span
+                                        class="tag tag-time">15 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">הוכיחו: אם $A\setminus B = B\setminus A$ אז $A=B$.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>נניח בשלילה $A\neq B$. אז קיים $x\in A\setminus B$ (בה״כ).</p>
+                            <p>אז $x\in B\setminus A$ כי הקבוצות שוות. אבל $x\in A\setminus B$ אומר $x\notin B$, ו-$x\in
+                                B\setminus A$ אומר $x\in B$.</p>
+                            <p><strong>סתירה → $A=B$.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">3</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">אינדוקציה מודולרית – התחלקות ב-3</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">קשה</span><span
+                                        class="tag tag-time">18 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">הוכיחו: לכל $n\ge 1$, $3\mid(2^{2n}-1)$.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p><strong>בסיס</strong> $n=1$: $2^2-1=3$ מתחלק ✓</p>
+                            <p><strong>הנחה:</strong> $2^{2n}\equiv 1\pmod{3}$</p>
+                            <p><strong>צעד:</strong> $2^{2(n+1)}-1=2^{2n}\cdot 4-1 \equiv 1\cdot 4-1\equiv 3\equiv
+                                0\pmod{3}$ ✓</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">4</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">אינדוקציה חזקה – פירוק לראשוניים</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">מאד קשה</span><span
+                                        class="tag tag-time">18 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">הוכיחו באינדוקציה חזקה: כל $n\ge 2$ ניתן לפרק למכפלה של ראשוניים.
+                    </div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p><strong>בסיס</strong> $n=2$: ראשוני – סיימנו ✓</p>
+                            <p><strong>הנחה:</strong> לכל $2\le k\le n$ הטענה נכונה.</p>
+                            <p><strong>צעד:</strong> עבור $n+1$: אם ראשוני – סיים. אם לא – $n+1=ab$ עם $2\le a,b\le n$.
+                                לפי הנחת החזקה שניהם מתפרקים → גם המכפלה.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">5</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">פונקציה על ועוצמות</div>
+                                <div class="exercise-tags"><span class="tag tag-medium">בינוני+</span><span
+                                        class="tag tag-time">12 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">הוכיחו: אם $f:A\to B$ על ו-$A$ סופית, אז $|A|\ge |B|$.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>"על" → לכל $b\in B$ יש לפחות $a\in A$ שממפה אליו. בוחרים נציג $a_b$ לכל $b$.</p>
+                            <p>אם $|A|&lt;|B|$, לפי שובך היונים חייבים שני $b$ שונים לקבל אותו $a$, סתירה ליחידות.</p>
+                            <p><strong>לכן $|B|\le |A|$.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SETS EXERCISES -->
+            <h3 class="animate-on-scroll" style="margin:3rem 0 1.5rem;color:var(--accent-cyan)">🗂️ קבוצות, יחסים
+                ופונקציות</h3>
+            <div class="exercise-set animate-on-scroll">
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">1</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">זהות קבוצות – דיסטריביוטיביות</div>
+                                <div class="exercise-tags"><span class="tag tag-medium">בינוני</span><span
+                                        class="tag tag-time">10 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">הוכיחו: $(A\cap B)\cup(A\cap C)=A\cap(B\cup C)$.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>הוכחת שתי הכלות:</p>
+                            <p>$x\in (A\cap B)\cup(A\cap C) \Rightarrow x\in A$ וגם $x\in B$ או $x\in C$ → $x\in
+                                A\cap(B\cup C)$.</p>
+                            <p><strong>כיוון הפוך דומה.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">2</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">ספירת פונקציות חח״ע</div>
+                                <div class="exercise-tags"><span class="tag tag-medium">בינוני+</span><span
+                                        class="tag tag-time">12 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">כמה פונקציות חח״ע קיימות מ-$A$ ל-$B$ כאשר $|A|=n, |B|=m$ ו-$n\le m$?
+                    </div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p><strong>$P(m,n)=\frac{m!}{(m-n)!}$</strong></p>
+                            <p>לבחור תמונה שונה לכל איבר: $m$ אפשרויות לראשון, $m-1$ לשני, ... , $m-n+1$ לאחרון.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">3</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">סימטרי + טרנזיטיבי → רפלקסיבי?</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">קשה</span><span
+                                        class="tag tag-time">15 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">הראו: אם $R$ סימטרי וטרנזיטיבי ולכל $a\in A$ קיים $b$ כך ש-$aRb$, אז
+                        $R$ רפלקסיבי.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>קח $a$. קיים $b$ כך ש-$aRb$. מסימטריות $bRa$.</p>
+                            <p><strong>מטרנזיטיביות: $aRb\land bRa\Rightarrow aRa$.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">4</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">סדר חלקי – יחס חלוקה</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">קשה</span><span
+                                        class="tag tag-time">18 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">יחס "$x$ מחלק את $y$" על $A=\{1,2,3,4,6,12\}$. מצאו מינימליים,
+                        מקסימליים, מינימום ומקסימום.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p><strong>מינימלי:</strong> $1$ (מחלק את כולם, אין קטן ממנו)</p>
+                            <p><strong>מקסימלי:</strong> $12$ (כולם מחלקים אותו, לא מחלק אף אחד אחר)</p>
+                            <p><strong>מינימום:</strong> $1$ (כי $1|x$ לכל $x$). <strong>מקסימום:</strong> $12$ (כי
+                                $x|12$ לכל $x\in A$).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">5</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">בדיקת יחס שקילות</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">מאד קשה</span><span
+                                        class="tag tag-time">18 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">יחס $R$ על $\mathbb{Z}\setminus\{0\}$: $aRb\iff \exists
+                        m\in\mathbb{Z}: a=m^2 b$. האם שקילות?</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p><strong>רפלקסיבי:</strong> $a=1^2 a$ ✓</p>
+                            <p><strong>טרנזיטיבי:</strong> $a=m^2 b, b=n^2 c \Rightarrow a=(mn)^2 c$ ✓</p>
+                            <p><strong>סימטרי?</strong> $a=m^2 b$ לא מבטיח $b=k^2 a$ (צריך $k^2=1/m^2$, לא שלם).
+                                <strong>לא סימטרי → לא שקילות.</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMBINATORICS EXERCISES -->
+            <h3 class="animate-on-scroll" style="margin:3rem 0 1.5rem;color:var(--accent-green)">🔢 קומבינטוריקה,
+                הכלה–הוצאה ורקורסיה</h3>
+            <div class="exercise-set animate-on-scroll">
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">1</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">סורייקציות – כדורים לתאים</div>
+                                <div class="exercise-tags"><span class="tag tag-medium">בינוני</span><span
+                                        class="tag tag-time">12 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">בכמה דרכים אפשר לחלק 12 כדורים שונים ל-4 תאים ממוספרים כך שאף תא לא
+                        ריק?</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>סורייקציות מ-12 ל-4 (הכלה–הוצאה על תאים ריקים):</p>
+                            <p>$$4^{12}-\binom{4}{1}3^{12}+\binom{4}{2}2^{12}-\binom{4}{3}1^{12}$$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">2</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">רקורסיה – מחרוזות בלי "11"</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">קשה</span><span
+                                        class="tag tag-time">18 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">כמה מחרוזות בינאריות באורך $n$ אין בהן תת-מחרוזת "11"?</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>נסמן $a_n$. סיווג לפי התחלה: מתחיל ב-0 → $a_{n-1}$. מתחיל ב-10 → $a_{n-2}$.</p>
+                            <p>$a_n=a_{n-1}+a_{n-2}$, $a_1=2$, $a_2=3$.</p>
+                            <p><strong>זה פיבונאצ'י מוזז: $a_n=F_{n+2}$</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">3</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">שובך היונים – שאריות</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">קשה</span><span
+                                        class="tag tag-time">15 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">הראו: בכל קבוצה של 13 מספרים טבעיים קיימים שניים $a,b$ כך ש-$a-b$
+                        מתחלק ב-12.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>שובך היונים: 12 שאריות אפשריות מוד 12, 13 מספרים.</p>
+                            <p><strong>→ שניים עם אותה שארית, וההפרש מתחלק ב-12.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">4</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">מקדם בפיתוח בינומי</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">מאד קשה</span><span
+                                        class="tag tag-time">18 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">מצאו את המקדם של $x^9$ בביטוי $(3-x^2)^7(2-2x)^2$.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>צריך $2i+j=9$, $j\in\{0,1,2\}$. כיוון ש-$2i$ זוגי ו-9 אי-זוגי → $j=1$ → $i=4$.</p>
+                            <p>מהבינום: $\binom{7}{4}3^3(-1)^4=35\cdot 27=945$</p>
+                            <p>מהגורם השני: מקדם $x^1$ ב-$4(1-2x+x^2)$ הוא $-8$</p>
+                            <p><strong>סה״כ: $945\cdot(-8)=-7560$</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">5</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">ספירת פונקציות לא חח״ע</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">מאד קשה</span><span
+                                        class="tag tag-time">18 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">כמה פונקציות $f:A\to B$ שאינן חח״ע כאשר $|A|=n\ge m=|B|$?</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>סה״כ פונקציות: $m^n$.</p>
+                            <p>אם $n>m$: אין הזרקה → כל $m^n$ הפונקציות אינן חח״ע.</p>
+                            <p><strong>אם $n=m$: אינן חח״ע = $m^m - m!$</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRAPHS EXERCISES -->
+            <h3 class="animate-on-scroll" style="margin:3rem 0 1.5rem;color:var(--accent-pink)">🌐 גרפים ועצים</h3>
+            <div class="exercise-set animate-on-scroll">
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">1</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">גרף רגולרי – בדיקת קיום</div>
+                                <div class="exercise-tags"><span class="tag tag-medium">בינוני</span><span
+                                        class="tag tag-time">10 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">האם קיים גרף 3-רגולרי עם 7 קודקודים?</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>סכום דרגות $=3\cdot 7=21$ חייב להיות זוגי (כי $2|E|$).</p>
+                            <p><strong>21 אי-זוגי → בלתי אפשרי.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">2</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">משפט אוילר – מסלול ומעגל</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">קשה</span><span
+                                        class="tag tag-time">15 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">גרף קשיר עם בדיוק שני קודקודים אי-זוגיים. הראו שיש מסלול אוילרי אבל
+                        אין מעגל אוילרי.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>משפט אוילר: 2 קודקודים אי-זוגיים ⇔ מסלול אוילרי פתוח.</p>
+                            <p><strong>מעגל אוילרי דורש 0 אי-זוגיים → אין.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">3</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">עלים בעץ</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">קשה</span><span
+                                        class="tag tag-time">18 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">הראו שבעץ עם $n$ קודקודים ($n\ge 2$) יש לפחות 2 עלים.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>סכום דרגות $=2(n-1)$. אם אין עלים (כל דרגה $\ge 2$) → סכום $\ge 2n$, סתירה.</p>
+                            <p><strong>אם יש בדיוק עלה אחד – גם סתירה (סכום דרגות לא מסתדר). לכן לפחות 2.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">4</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">קיום משולש בגרף צפוף</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">מאד קשה</span><span
+                                        class="tag tag-time">18 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">נתון גרף עם 10 קודקודים שבו לכל קודקוד דרגה $\ge 6$. הראו שיש בו
+                        משולש.</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p>קח קודקוד $v$ עם $\ge 6$ שכנים. אם בין שכניו קיימת קשת – יש משולש.</p>
+                            <p>אם אין קשת בין שכניו – הם קבוצה בלתי תלויה בגודל $\ge 6$. כל אחד מהם יכול להתחבר לכל
+                                היותר ל-4 אחרים (כי אין חיבור פנימי).</p>
+                            <p><strong>סתירה לדרגה $\ge 6$.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <div class="exercise-header">
+                        <div class="exercise-info">
+                            <div class="exercise-number">5</div>
+                            <div class="exercise-meta">
+                                <div class="exercise-title">קשתות בעץ</div>
+                                <div class="exercise-tags"><span class="tag tag-hard">קשה</span><span
+                                        class="tag tag-time">15 דק׳</span></div>
+                            </div>
+                        </div>
+                        <button class="solution-toggle">הצג פתרון</button>
+                    </div>
+                    <div class="exercise-question">כמה קשתות יש בעץ אם יש בו 8 קודקודים?</div>
+                    <div class="solution-content">
+                        <div class="solution-inner">
+                            <p><strong>בעץ $|E|=|V|-1$ → $8-1=7$ קשתות.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- QUIZ -->
+    <section class="section" id="quiz">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-icon">🎯</div>
+                <h2 class="section-title">שאלון מוכנות</h2>
+                <p class="section-desc">לחצו על כל שאלה כדי לראות את התשובה – השתמשו פעמיים: לפני ואחרי הלמידה</p>
+            </div>
+            <div class="quiz-grid animate-on-scroll">
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">1.</span><span>(קל) האם $p\to q$ שקול ל-$q\to
+                            p$?</span></div>
+                    <div class="quiz-answer">
+                        <div class="quiz-answer-inner"><strong>לא.</strong> דוגמה נגדית: $p=T, q=F$.</div>
+                    </div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">2.</span><span>(בינוני) שללו: $\forall x \exists
+                            y\, R(x,y)$.</span></div>
+                    <div class="quiz-answer">
+                        <div class="quiz-answer-inner">$\exists x \forall y\, \neg R(x,y)$</div>
+                    </div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">3.</span><span>(בינוני) כמה פונקציות $A\to B$ אם
+                            $|A|=4, |B|=3$?</span></div>
+                    <div class="quiz-answer">
+                        <div class="quiz-answer-inner">$3^4=81$</div>
+                    </div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">4.</span><span>(קשה) אם $R$ שקילות, מה הקשר בין
+                            מחלקות שקילות לפרטיציה?</span></div>
+                    <div class="quiz-answer">
+                        <div class="quiz-answer-inner">המחלקות יוצרות <strong>חלוקה (פרטיציה)</strong> של $A$ — קבוצות
+                            זרות שאיחודן כל $A$.</div>
+                    </div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">5.</span><span>(בינוני) חשבו $\sum_{k=1}^n
+                            (2k-1)$.</span></div>
+                    <div class="quiz-answer">
+                        <div class="quiz-answer-inner">$n^2$</div>
+                    </div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">6.</span><span>(קשה) כמה פונקציות על מ-5 ל-3?
+                            (הכלה–הוצאה)</span></div>
+                    <div class="quiz-answer">
+                        <div class="quiz-answer-inner">$3^5-\binom{3}{1}2^5+\binom{3}{2}1^5=243-96+3=\mathbf{150}$</div>
+                    </div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">7.</span><span>(בינוני) בעץ עם 15 קודקודים – כמה
+                            קשתות?</span></div>
+                    <div class="quiz-answer">
+                        <div class="quiz-answer-inner"><strong>14</strong> ($|E|=|V|-1$)</div>
+                    </div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">8.</span><span>(קשה) האם קיים גרף 4-רגולרי על 7
+                            קודקודים?</span></div>
+                    <div class="quiz-answer">
+                        <div class="quiz-answer-inner"><strong>כן</strong> — $4\cdot 7=28$ זוגי. (למשל, משלים של $C_7$
+                            הוא 4-רגולרי)</div>
+                    </div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">9.</span><span>(בינוני) מה ההבדל בין "מינימלי"
+                            ל"מינימום" בסדר חלקי?</span></div>
+                    <div class="quiz-answer">
+                        <div class="quiz-answer-inner"><strong>מינימום</strong> = קטן מכולם; <strong>מינימלי</strong> =
+                            אין קטן ממנו (לא בהכרח קטן מכולם).</div>
+                    </div>
+                </div>
+
+                <div class="quiz-item">
+                    <div class="quiz-question"><span class="quiz-num">10.</span><span>(קשה) מצאו כלל נסיגה למחרוזות מעל
+                            $\{0,1,2\}$ באורך $n$ ללא "11" וללא "22".</span></div>
+                    <div class="quiz-answer">
+                        <div class="quiz-answer-inner">מגדירים מצבים לפי תו אחרון; מתקבל <strong>וקטור נסיגה</strong>
+                            (מערכת לינארית) עם 3 מצבים.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- COMMON MISTAKES -->
+    <section class="section" id="mistakes">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-icon">⚠️</div>
+                <h2 class="section-title">טעויות נפוצות</h2>
+                <p class="section-desc">הטעויות שחוזרות הכי הרבה במבחני בדידה באפקה</p>
+            </div>
+            <div class="mistakes-list animate-on-scroll">
+                <div class="mistake-item">
+                    <span class="mistake-icon">❌</span>
+                    <div class="mistake-text"><strong>"פתרון יפה" בלי פורמליות</strong> — במבחנים נדרשת הצדקה מינימלית
+                        אבל עקבית; במיוחד ביחסים ואינדוקציה.</div>
+                </div>
+                <div class="mistake-item">
+                    <span class="mistake-icon">❌</span>
+                    <div class="mistake-text"><strong>אינדוקציה – הנחה לא מדויקת</strong> — שימוש בהנחת האינדוקציה על
+                        $n+1$ במקום על $n$, או ניסוח מעורפל של ההנחה.</div>
+                </div>
+                <div class="mistake-item">
+                    <span class="mistake-icon">❌</span>
+                    <div class="mistake-text"><strong>קומבינטוריקה – ערבוב מודלים</strong> — בלבול בין "כדורים שונים"
+                        ל"כדורים זהים", או בין "תאים ממוספרים" ל"לא ממוספרים".</div>
+                </div>
+                <div class="mistake-item">
+                    <span class="mistake-icon">❌</span>
+                    <div class="mistake-text"><strong>גרפים – שכחת תנאי זוגיות</strong> — לשכוח שסכום דרגות חייב להיות
+                        זוגי ($2|E|$), או לערבב בין "מסלול" ל"מעגל" אוילרי.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- RESOURCES -->
+    <section class="section" id="resources">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-icon">📖</div>
+                <h2 class="section-title">מקורות מומלצים</h2>
+                <p class="section-desc">ספרי לימוד ומקורות לחיזוק העומק התיאורטי</p>
+            </div>
+            <div class="resource-grid animate-on-scroll">
+                <div class="resource-card">
+                    <h4>📘 Discrete Mathematics and Its Applications</h4>
+                    <p>Kenneth Rosen, מהדורה 8. ספר מקיף וקלאסי שמכסה את כל נושאי הקורס ברמה מצוינת, עם אלפי תרגילים.
+                    </p>
+                </div>
+                <div class="resource-card">
+                    <h4>📗 Discrete Mathematics with Applications</h4>
+                    <p>Susanna Epp. גישה נגישה יותר עם דגש על הוכחות ובניית חשיבה מתמטית, מתאים במיוחד למתחילים.</p>
+                </div>
+                <div class="resource-card">
+                    <h4>🎓 תקציר ציבורי של אפקה</h4>
+                    <p>קורס 90926 "מתמטיקה בדידה" — מונה את נושאי הלוגיקה, קבוצות, אינדוקציה, קומבינטוריקה, רקורסיה,
+                        פונקציות יוצרות, וגרפים.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>📐 סיכום מתמטיקה בדידה 90926 | אפקה – הנדסת תוכנה | נבנה מתוך ניתוח מבחנים 2020–2024</p>
+    </footer>
+
+    <button class="back-to-top" aria-label="חזרה למעלה">↑</button>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
