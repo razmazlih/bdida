@@ -559,6 +559,28 @@ pre code {
   color: var(--text-primary);
 }
 
+/* ===== KaTeX Math – RTL Fix ===== */
+.katex,
+.katex-display {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+.katex * {
+  direction: ltr !important;
+}
+
+.katex-display {
+  text-align: center;
+  display: block;
+  margin: 1em 0;
+}
+
+/* Ensure inline math stays inline and doesn't break text flow */
+.katex-mathml {
+  direction: ltr !important;
+}
+
 .code-label {
   display: inline-flex;
   align-items: center;
